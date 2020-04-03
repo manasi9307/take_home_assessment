@@ -1,27 +1,31 @@
 import React from 'react';
 import axios from 'axios';
-
+import Follower from '../users/Followers';
+//import Repos from '../users/Repos';
 class Profile extends React.Component{
     constructor(){
         super()
         this.state={
-            repos:{},
-            followers:{},
+            repos:[],
+            followers:[],
             
         }
     }
 componentDidMount(){
-axios.get(`https://api.github.com/users/${this.props.match.param}/followers`)
+axios.get(`https://api.github.com/users/${this.props.match.params.login}/followers`)
 .then(res => {
-    console.log(res.data)
+    
+    //console.log(res.data)
     this.setState({followers:res.data})
+    console.log(this.state.followers)
 
-    return axios.get(`https://api.github.com/users/${this.props.match.param}/repos`)
+    return axios.get(`https://api.github.com/users/${this.props.match.params.login}/repos`)
     .then(res => {
-        console.log(res.data)
+        //console.log(res.data)
         this.setState({
             repos:res.data
         })
+        console.log(this.state.repos)
     }).catch(err => console.log(err))
     
 })
@@ -29,8 +33,9 @@ axios.get(`https://api.github.com/users/${this.props.match.param}/followers`)
     render(){
         const {followers} = this.state
         return(
-        <div>
-            <img src={followers.avatar_url} alt="bvkjb"/>
+        <div className="user-grid">
+            {followers.map(item =>
+               <Follower key={item.id} follower={item} /> )}
         </div>
         )
     }

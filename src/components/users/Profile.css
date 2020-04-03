@@ -1,0 +1,9 @@
+.user-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    grid-gap:20px;
+    
+}

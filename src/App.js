@@ -29,7 +29,7 @@ class App extends React.Component{
      <div>
        <Switch>
          <Route exact path="/" component={Index} />
-         <Route exact path="/profile/:id" component={Profile} />
+         <Route exact path="/profile/:login" component={Profile} />
        </Switch>
      </div>
      </React.Fragment>

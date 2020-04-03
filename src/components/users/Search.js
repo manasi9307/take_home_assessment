@@ -32,7 +32,7 @@ class Search extends React.Component{
               {value => {
                   const {dispatch} = value;
               return (
-                  <div>
+                  <div className="search">
                       <h1>
                           Search
                       </h1>
