@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route , Switch}  from 'react-router-dom';
 import './App.css';
 import Navbar from './components/layout/Navbar';
 import Index from './components/layout/Index';
+import Profile from './components/users/Profile';
 import {Provider} from './context';
 
 class App extends React.Component{
@@ -16,17 +17,7 @@ class App extends React.Component{
   }
 
 
-// componentDidMount(){
-  
-//   fetch(`https://api.github.com/users`)
-//   .then(response => response.json())
-//   .then(data =>{
-//     console.log(data)
-//     this.setState({
-//       users:data
-//     })
-//   })
-// }
+
 
  render(){
    
@@ -38,6 +29,7 @@ class App extends React.Component{
      <div>
        <Switch>
          <Route exact path="/" component={Index} />
+         <Route exact path="/profile/:id" component={Profile} />
        </Switch>
      </div>
      </React.Fragment>

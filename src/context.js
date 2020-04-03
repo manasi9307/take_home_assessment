@@ -3,10 +3,24 @@ import axios from 'axios';
 
 const Context= React.createContext();
 
+const reducer = (state,action) => {
+    switch(action.type){
+        case 'SEARCH_USER':
+         return{
+             ...state,
+             users_list:action.payload,
+             heading:'Search Results'
+         };
+         default:
+             return state;
+    }
+}
+
 export class Provider extends React.Component{
-    state={
+    state = {
         users_list:[],
-            heading:"Users"
+        heading:"Users",
+        dispatch:action => this.setState(state => reducer(state,action))
     }
 
     componentDidMount(){
@@ -17,10 +31,10 @@ export class Provider extends React.Component{
         users_list:res.data
     })
     
-})
-    .catch(err => console.log(err))
-    }
-    render(){
+}).catch(err => console.log(err))
+}
+
+render(){
         return(
         <Context.Provider value={this.state}>
          {this.props.children}
@@ -28,5 +42,6 @@ export class Provider extends React.Component{
         )
     }
 }
+
 
 export const Consumer = Context.Consumer;
