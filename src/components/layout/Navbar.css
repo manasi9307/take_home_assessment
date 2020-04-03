@@ -1,0 +1,15 @@
+.navbar{
+    background-color: rgb(58, 56, 56);
+    margin:0;
+}
+
+.navbar-brand{
+    margin:0 auto;
+    margin-bottom: 0;
+    color:white;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    padding:10%;
+
+}
