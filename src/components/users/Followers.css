@@ -13,3 +13,8 @@
         font-size: 22px;
         color: black;
       }
+
+      h1{
+        margin: 0 auto;
+        text-align: center;
+      }

@@ -2,12 +2,13 @@ import React from 'react';
 
 
 const Repos = (props) => {
-    const repo = {props};
+    const {repo} = props;
+    console.log(repo)
     return(
         <div>
       <div>
          <div className="card">
-           {repo.name}
+          <a href= {repo.html_url}>{repo.full_name}</a> 
          </div>
     </div>
 </div>

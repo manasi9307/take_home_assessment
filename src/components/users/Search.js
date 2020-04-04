@@ -2,6 +2,8 @@ import React from 'react';
 import {Consumer} from '../../context';
 import axios from 'axios';
 
+import './Search.css';
+
 class Search extends React.Component{
     constructor(){
         super()

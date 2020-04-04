@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import Follower from '../users/Followers';
-//import Repos from '../users/Repos';
+import Repos from '../users/Repos';
+
 class Profile extends React.Component{
     constructor(){
         super()
@@ -31,12 +32,21 @@ axios.get(`https://api.github.com/users/${this.props.match.params.login}/followe
 })
 }
     render(){
-        const {followers} = this.state
+        const {followers,repos} = this.state
         return(
-        <div className="user-grid">
-            {followers.map(item =>
-               <Follower key={item.id} follower={item} /> )}
+           
+         <React.Fragment>
+             <h1>Repositories</h1> 
+        <div className="main-grid">
+            <div className="user-grid">
+            {repos.map(item => 
+                <Repos key={item.id} repo={item} />
+            )}
+            
         </div>
+        
+        </div>
+        </React.Fragment>
         )
     }
 }
