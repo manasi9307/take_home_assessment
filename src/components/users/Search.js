@@ -42,7 +42,7 @@ class Search extends React.Component{
                        <input type="text" placeholder="Search for user" name="name" value={this.state.user_name}
                        onChange={this.onChange}
                        />
-                       <button type="submit">Get user Details</button>
+                       <button type="submit">Go</button>
                        </form>
                   </div>
               )
