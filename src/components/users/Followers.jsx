@@ -7,9 +7,7 @@ const Follower= (props) => {
     return(
     <div>
       <div>
-         <div className="card">
-             <img src={follower.avatar_url} alt={follower.login}  style={{width: "100px"}}/> 
-             <br/>
+         <div>
              <p>{follower.login}</p>
          </div>
     </div>

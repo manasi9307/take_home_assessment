@@ -9,8 +9,22 @@
     
 }
 
+h2{
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1{
+    margin: 0 auto;
+    text-align: center;
+}
+
 .main-grid{
     display: grid;
     grid-template-columns: 2fr 1fr;
-
 }
+
+.main-grid > div {
+    text-align: center;
+}
+

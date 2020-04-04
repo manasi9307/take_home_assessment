@@ -18,6 +18,7 @@ class Users extends React.Component{
         return (
             <React.Fragment>
                 <h3>{heading}</h3>
+                
             <div className="user-grid">
             {users_list.map(item => (
                 
