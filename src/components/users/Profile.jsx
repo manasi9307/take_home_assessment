@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Follower from '../users/Followers';
 import Repos from '../users/Repos';
+import Spinner from '../layout/Spinner';
 
 class Profile extends React.Component{
     constructor(){
@@ -33,10 +34,15 @@ axios.get(`https://api.github.com/users/${this.props.match.params.login}/followe
 }
     render(){
         const {followers,repos} = this.state
+
+        if(repos === undefined || repos.length === 0){
+            return <Spinner />
+        } else {
         return(
            
          <React.Fragment>
              <h1>Repositories</h1> 
+
         <div className="main-grid">
             <div className="user-grid">
             {repos.map(item => 
@@ -49,6 +55,7 @@ axios.get(`https://api.github.com/users/${this.props.match.params.login}/followe
         </React.Fragment>
         )
     }
+}
 }
 
 export default Profile;
