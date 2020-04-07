@@ -21,8 +21,9 @@ export class Provider extends React.Component{
         users_list:[],
         heading:"Users",
         dispatch:action => this.setState(state => reducer(state,action))
+    
     }
-
+   
     componentDidMount(){
     axios.get('https://api.github.com/users')
     .then(res => {
@@ -35,6 +36,7 @@ export class Provider extends React.Component{
 }
 
 render(){
+    console.log(this.state.users_list)
         return(
         <Context.Provider value={this.state}>
          {this.props.children}

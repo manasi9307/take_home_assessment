@@ -8,7 +8,7 @@ class Search extends React.Component{
     constructor(){
         super()
         this.state={
-            user_name:''
+            user_name:""
         }
     }
    onChange=(e)=>{
@@ -21,7 +21,7 @@ class Search extends React.Component{
      .then(res => {
          dispatch({
              type:'SEARCH_USER',
-             payload:res.data
+             payload:[res.data]
          })
          this.setState({user_name:''})
      })

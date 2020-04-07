@@ -14,7 +14,7 @@ class Users extends React.Component{
     if(users_list === undefined || users_list.length === 0){
         return <Spinner />
     } else {
-        
+        console.log(users_list)
         return (
             <React.Fragment>
                 <h3>{heading}</h3>
